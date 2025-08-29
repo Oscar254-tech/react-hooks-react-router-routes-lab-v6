@@ -1,9 +1,11 @@
-import { afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
-import '@testing-library/jest-dom/vitest'
-import 'whatwg-fetch';
-import {Blob} from 'node:buffer';
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import * as matchers from '@testing-library/jest-dom/matchers';
 
+// Extend Vitest with Jest DOM matchers
+expect.extend(matchers);
+
+// Cleanup after each test
 afterEach(() => {
-    cleanup();
-})
+  cleanup();
+});
